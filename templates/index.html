@@ -3,24 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <title>Room Layout Manager</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-  <!-- ドラッグ＆リサイズ用ライブラリ -->
-  <script src="https://cdn.jsdelivr.net/npm/interactjs@1.10.17/dist/interact.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
 </head>
 <body>
   <header>
     <h1>Room Layout Manager</h1>
     <button id="addFurniture">＋ Furniture</button>
+    <button id="addFolder">＋ Folder</button>
     <button id="addItem">＋ Item</button>
   </header>
 
+  <!-- ルームエリア -->
   <main>
-    <!-- 家具ブロックを置くキャンバス -->
-    <div id="room"></div>
+    <div id="room">
+      <!-- resizable 背景パネル -->
+      <div id="room-border">
+        <span id="room-handle"></span> <!-- 右下ハンドル -->
+      </div>
+    </div>
   </main>
 
-  <!-- ページ制御用 JS -->
+  <!-- モバイル用フッターメニュー（隠せる） -->
+  <footer>
+    <button class="mini" id="delMode">🗑 Delete mode</button>
+  </footer>
+
   <script src="{{ url_for('static', filename='app.js') }}"></script>
 </body>
 </html>
+
 
