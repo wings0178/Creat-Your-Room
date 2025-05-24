@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Room Layout Manager</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <!-- ドラッグ＆リサイズ用ライブラリ -->
+  <script src="https://cdn.jsdelivr.net/npm/interactjs@1.10.17/dist/interact.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Room Layout Manager</h1>
+    <button id="addFurniture">＋ Furniture</button>
+    <button id="addItem">＋ Item</button>
+  </header>
+
+  <main>
+    <!-- 家具ブロックを置くキャンバス -->
+    <div id="room"></div>
+  </main>
+
+  <!-- ページ制御用 JS -->
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
+
