@@ -1,35 +1,25 @@
-/* ============================
-   style.css – v2 修正版
-   - 9 色カラーパレット
-   - 家具フォント大きめ
-   - 初期部屋サイズ小さめ
-   - モバイル UI 調整
-   ============================ */
-html,body{margin:0;font-family:system-ui, sans-serif;height:100%;}
-header{padding:8px;display:flex;flex-wrap:wrap;gap:8px;background:#f5f5f5;}
-h1{margin:0;font-size:24px;}
-main{height:calc(100% - 60px);overflow:auto;padding:4px;}
+html,body{margin:0;font-family:sans-serif;height:100%;}
+header{padding:8px;display:flex;gap:8px;flex-wrap:wrap}
+h1{margin:0;font-size:22px}
+main{height:calc(100% - 90px);overflow:auto;padding:6px}
 
-/* ----- 部屋 ----- */
-#room{position:relative;width:600px;height:400px;margin:auto;touch-action:none;}
-#room-border{position:absolute;inset:0;border:2px solid #555;border-radius:4px;background:#fff;}
-#room-handle{position:absolute;right:-6px;bottom:-6px;width:12px;height:12px;background:#fff;border:2px solid #444;cursor:nwse-resize;border-radius:2px;}
+/* ルーム */
+#room{position:relative;margin:auto;width:600px;height:400px;user-select:none}
+#room-border{position:absolute;inset:0;border:2px solid #555;border-radius:4px}
+#room-handle{position:absolute;right:-6px;bottom:-6px;width:12px;height:12px;
+  background:#fff;border:2px solid #444;border-radius:2px;cursor:nwse-resize}
 
-/* ----- 家具 ----- */
-.furniture{position:absolute;min-width:60px;min-height:30px;border:2px solid #333;border-radius:4px;display:flex;align-items:center;justify-content:center;user-select:none;touch-action:none;color:#000;font-size:16px;padding:2px;box-sizing:border-box;}
-.furniture.selected{outline:3px dashed red;}
-.folder-badge{position:absolute;left:2px;top:2px;padding:2px 4px;font-size:10px;background:#ffce54;border-radius:3px;}
+/* 家具 */
+.furniture{position:absolute;min-width:60px;min-height:30px;border:2px solid #333;
+  border-radius:4px;display:flex;align-items:center;justify-content:center;
+  font-size:16px;color:#000;cursor:move}
+.furniture.locked{cursor:default;pointer-events:none;opacity:.8}
+.folder-badge{position:absolute;left:2px;top:2px;background:#ffd95e;border-radius:3px;
+  padding:1px 4px;font-size:11px}
 
-/* ----- カラーパレット ----- */
-#palette{position:fixed;bottom:60px;left:50%;transform:translateX(-50%);display:flex;gap:6px;background:#fff;padding:6px 8px;border:2px solid #333;border-radius:8px;box-shadow:0 2px 10px rgba(0,0,0,.2);}
-#palette.hidden{display:none;}
-.swatch{width:28px;height:28px;border:2px solid #444;cursor:pointer;border-radius:4px;}
-.swatch.selected{outline:3px solid #000;}
+/* ボタン */
+.mini{font-size:12px;padding:4px 6px}
 
-/* ----- モバイル用削除ボタン ----- */
-footer{display:none;}
-@media(max-width:600px){
-  footer{display:block;position:fixed;bottom:0;width:100%;background:#eee;padding:4px;text-align:center;}
-  main{height:calc(100% - 100px);}
-}
-button.mini{font-size:12px;padding:4px 6px;}
+/* カラーパレット */
+.palette{display:flex;gap:6px;margin-top:8px}
+.swatch{width:22px;height:22px;border:2px solid #555;border-radius:50%;cursor:pointer}

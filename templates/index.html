@@ -13,25 +13,18 @@
     <button id="addFurniture">＋ Furniture</button>
     <button id="addFolder">＋ Folder</button>
     <button id="addItem">＋ Item</button>
+
+    <!-- モード切替 -->
+    <button id="lockBtn"  class="mini">🔓 Lock OFF</button>
+    <button id="delBtn"   class="mini">🗑 Delete OFF</button>
   </header>
 
-  <!-- ルームエリア -->
   <main>
     <div id="room">
-      <!-- resizable 背景パネル -->
-      <div id="room-border">
-        <span id="room-handle"></span> <!-- 右下ハンドル -->
-      </div>
+      <div id="room-border"><span id="room-handle"></span></div>
     </div>
   </main>
-
-  <!-- モバイル用フッターメニュー（隠せる） -->
-  <footer>
-    <button class="mini" id="delMode">🗑 Delete mode</button>
-  </footer>
 
   <script src="{{ url_for('static', filename='app.js') }}"></script>
 </body>
 </html>
-
-
